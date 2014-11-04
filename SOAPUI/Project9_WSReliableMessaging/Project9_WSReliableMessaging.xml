@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4089e9da-bf67-44e5-af01-d564d003aa3d" activeEnvironment="Default" name="Project9_WSReliableMessaging" resourceRoot="" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value="/Applications/SoapUI-Pro-5.1.2.app/Contents/java/app/bin"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="true"/>
+  <con:entry key="Enable UI" value="true"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="TestCase 1"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value="/Users/appledev/Desktop/Delete"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value="TestSuite Report"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="c2cfef98-50f9-4599-bbb0-663be16ab556" wsaVersion="NONE" name="Employee Web ServiceBinding" type="wsdl" bindingName="{Demo}Employee Web ServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost/Project/soapService.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost/Project/soapService.php?wsdl"><con:part><con:url>http://localhost/Project/soapService.php?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="Demo" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="Demo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="Demo">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+      <xsd:complexType name="detail">
+        <xsd:all>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="Company" type="xsd:string"/>
+          <xsd:element name="Designation" type="xsd:string"/>
+          <xsd:element name="Salary" type="xsd:double"/>
+          <xsd:element name="Experience" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="details">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:detail[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="aemp">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="company" type="xsd:string"/>
+          <xsd:element name="designation" type="xsd:string"/>
+          <xsd:element name="salary" type="xsd:double"/>
+          <xsd:element name="experience" type="xsd:string"/>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="addemp">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:aemp[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="demp">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="company" type="xsd:string"/>
+          <xsd:element name="designation" type="xsd:string"/>
+          <xsd:element name="salary" type="xsd:double"/>
+          <xsd:element name="experience" type="xsd:string"/>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="delemp">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:demp[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="FindRequest">
+    <part name="Name" type="xsd:string"/>
+    <part name="Company" type="xsd:string"/>
+  </message>
+  <message name="FindResponse">
+    <part name="details" type="tns:details"/>
+  </message>
+  <message name="AddRequest">
+    <part name="Name" type="xsd:string"/>
+    <part name="Company" type="xsd:string"/>
+    <part name="Designation" type="xsd:string"/>
+    <part name="Salary" type="xsd:double"/>
+    <part name="Experience" type="xsd:string"/>
+  </message>
+  <message name="AddResponse">
+    <part name="addemp" type="tns:addemp"/>
+  </message>
+  <message name="DeleteRequest">
+    <part name="Name" type="xsd:string"/>
+  </message>
+  <message name="DeleteResponse">
+    <part name="delemp" type="tns:delemp"/>
+  </message>
+  <portType name="Employee Web ServicePortType">
+    <operation name="Find">
+      <input message="tns:FindRequest"/>
+      <output message="tns:FindResponse"/>
+    </operation>
+    <operation name="Add">
+      <input message="tns:AddRequest"/>
+      <output message="tns:AddResponse"/>
+    </operation>
+    <operation name="Delete">
+      <input message="tns:DeleteRequest"/>
+      <output message="tns:DeleteResponse"/>
+    </operation>
+  </portType>
+  <binding name="Employee Web ServiceBinding" type="tns:Employee Web ServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Find">
+      <soap:operation soapAction="Demo#find" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Add">
+      <soap:operation soapAction="Demo#add" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Delete">
+      <soap:operation soapAction="Demo#delete" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Employee Web Service">
+    <port name="Employee Web ServicePort" binding="tns:Employee Web ServiceBinding">
+      <soap:address location="http://localhost/Project/soapService.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/Project/soapService.php</con:endpoint></con:endpoints><con:operation id="fd04ea1a-2d6a-4bb5-b3d8-8c25ca06bddf" isOneWay="false" action="Demo#add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="63cd908f-244f-4f40-a52a-87ece58342fe" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string">?</Name>
+         <Company xsi:type="xsd:string">?</Company>
+         <Designation xsi:type="xsd:string">?</Designation>
+         <Salary xsi:type="xsd:double">?</Salary>
+         <Experience xsi:type="xsd:string">?</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#add"/></con:call></con:operation><con:operation id="8f31f514-09d6-4a3c-931d-9332832c01b5" isOneWay="false" action="Demo#delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6a77c1d4-b1e3-43f0-922b-ee13f5da29fd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string">?</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#delete"/></con:call></con:operation><con:operation id="842d7ffa-61bd-41c6-97d9-b917a30d67a7" isOneWay="false" action="Demo#find" name="Find" bindingOperationName="Find" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ec18950e-0b19-4021-b074-80301057837c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Find soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string">?</Name>
+         <Company xsi:type="xsd:string">?</Company>
+      </demo:Find>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#find"/></con:call></con:operation></con:interface><con:testSuite id="77fa59de-0954-4525-b214-ad7a28d500f6" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8c13394c-fd46-40c9-b218-fc7d3118a209" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="Test Request" id="aee8bbb2-925f-41f4-a69b-534879e81e63"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Add</con:operation><con:request name="Test Request" id="7899425e-2b55-45c4-a014-f0d444fbed37" useWsReliableMessaging="true" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester9</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester9</Company>
+         <Designation xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester9</Designation>
+         <Salary xsi:type="xsd:double" xs:type="type:double" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">10000</Salary>
+         <Experience xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">9</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="50d5b2fd-df58-4432-a7bd-31d7b6998fa1"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" addDefaultAction="true" to="http://localhost/Project/soapService.php" generateMessageId="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Test Request 1" id="61fdc688-0c7e-4116-b86c-d0ad22fbc270"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Find</con:operation><con:request name="Test Request 1" id="b2e5f460-8dcb-496b-8f52-29bba4120b8e" useWsReliableMessaging="true" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Find soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester9</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</Company>
+      </demo:Find>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ca6004c7-9af4-4b83-aa16-8ad204631923"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" addDefaultAction="true" to="http://localhost/Project/soapService.php" generateMessageId="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>

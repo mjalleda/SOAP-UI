@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7771ce9a-9cdb-4bc5-85de-65aa257639d1" activeEnvironment="Default" name="Project3_PropertiesTransfer" resourceRoot="" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="TestSuite2_DataSource_WithExcelType"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value="/Applications/SoapUI-Pro-5.1.2.app/Contents/java/app/bin"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="true"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value="/Users/appledev/Desktop/Delete"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value="TestSuite Report"/>
+</xml-fragment>]]></con:setting><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting><con:setting id="GeneratableJUnitReport@Folder">/Users/appledev/Documents/workspace/SOAP UI/SOAPUI_Material_Notes/Training_Material/TestData/Reports/Project</con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="e0c87d40-1194-4331-97b6-8aca4694f850" wsaVersion="NONE" name="TemperatureConversionsSoapBinding" type="wsdl" bindingName="{http://webservices.daehosting.com/temperature}TemperatureConversionsSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://webservices.daehosting.com/services/TemperatureConversions.wso?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://webservices.daehosting.com/services/TemperatureConversions.wso?WSDL"><con:part><con:url>http://webservices.daehosting.com/services/TemperatureConversions.wso?WSDL</con:url><con:content><![CDATA[<definitions name="TemperatureConversions" targetNamespace="http://webservices.daehosting.com/temperature" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.daehosting.com/temperature">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://webservices.daehosting.com/temperature">
+      <xs:element name="CelciusToFahrenheit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nCelcius" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CelciusToFahrenheitResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CelciusToFahrenheitResult" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FahrenheitToCelcius">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nFahrenheit" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FahrenheitToCelciusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FahrenheitToCelciusResult" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WindChillInCelcius">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nCelcius" type="xs:decimal"/>
+            <xs:element name="nWindSpeed" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WindChillInCelciusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="WindChillInCelciusResult" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WindChillInFahrenheit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nFahrenheit" type="xs:decimal"/>
+            <xs:element name="nWindSpeed" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WindChillInFahrenheitResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="WindChillInFahrenheitResult" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="CelciusToFahrenheitSoapRequest">
+    <part name="parameters" element="tns:CelciusToFahrenheit"/>
+  </message>
+  <message name="CelciusToFahrenheitSoapResponse">
+    <part name="parameters" element="tns:CelciusToFahrenheitResponse"/>
+  </message>
+  <message name="FahrenheitToCelciusSoapRequest">
+    <part name="parameters" element="tns:FahrenheitToCelcius"/>
+  </message>
+  <message name="FahrenheitToCelciusSoapResponse">
+    <part name="parameters" element="tns:FahrenheitToCelciusResponse"/>
+  </message>
+  <message name="WindChillInCelciusSoapRequest">
+    <part name="parameters" element="tns:WindChillInCelcius"/>
+  </message>
+  <message name="WindChillInCelciusSoapResponse">
+    <part name="parameters" element="tns:WindChillInCelciusResponse"/>
+  </message>
+  <message name="WindChillInFahrenheitSoapRequest">
+    <part name="parameters" element="tns:WindChillInFahrenheit"/>
+  </message>
+  <message name="WindChillInFahrenheitSoapResponse">
+    <part name="parameters" element="tns:WindChillInFahrenheitResponse"/>
+  </message>
+  <portType name="TemperatureConversionsSoapType">
+    <operation name="CelciusToFahrenheit">
+      <documentation>Converts a Celcius Temperature to a Fahrenheit value</documentation>
+      <input message="tns:CelciusToFahrenheitSoapRequest"/>
+      <output message="tns:CelciusToFahrenheitSoapResponse"/>
+    </operation>
+    <operation name="FahrenheitToCelcius">
+      <documentation>Converts a Fahrenheit Temperature to a Celcius value</documentation>
+      <input message="tns:FahrenheitToCelciusSoapRequest"/>
+      <output message="tns:FahrenheitToCelciusSoapResponse"/>
+    </operation>
+    <operation name="WindChillInCelcius">
+      <documentation>Windchill temperature calculated with the formula of Steadman</documentation>
+      <input message="tns:WindChillInCelciusSoapRequest"/>
+      <output message="tns:WindChillInCelciusSoapResponse"/>
+    </operation>
+    <operation name="WindChillInFahrenheit">
+      <documentation>Windchill temperature calculated with the formula of Steadman</documentation>
+      <input message="tns:WindChillInFahrenheitSoapRequest"/>
+      <output message="tns:WindChillInFahrenheitSoapResponse"/>
+    </operation>
+  </portType>
+  <binding name="TemperatureConversionsSoapBinding" type="tns:TemperatureConversionsSoapType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="CelciusToFahrenheit">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="FahrenheitToCelcius">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="WindChillInCelcius">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="WindChillInFahrenheit">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TemperatureConversions">
+    <documentation>Visual DataFlex Web Service to convert temperature values between Celcius and Fahrenheit</documentation>
+    <port name="TemperatureConversionsSoap" binding="tns:TemperatureConversionsSoapBinding">
+      <soap:address location="http://webservices.daehosting.com/services/TemperatureConversions.wso"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint></con:endpoints><con:operation id="8daadc15-7cbc-48c9-b5f9-174f278b2561" isOneWay="false" action="" name="CelciusToFahrenheit" bindingOperationName="CelciusToFahrenheit" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f97d137f-782c-4bd9-a811-1d6864884074" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>?</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/CelciusToFahrenheitRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="61889d88-f64f-4a76-90c2-9bb0a0394385" isOneWay="false" action="" name="FahrenheitToCelcius" bindingOperationName="FahrenheitToCelcius" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ce701543-a31c-42ea-9aed-e7f82ea7f98b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:FahrenheitToCelcius>
+         <tem:nFahrenheit>?</tem:nFahrenheit>
+      </tem:FahrenheitToCelcius>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/FahrenheitToCelciusRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5c7d6fd6-918d-4db0-88c4-c17e5e0055b8" isOneWay="false" action="" name="WindChillInCelcius" bindingOperationName="WindChillInCelcius" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9795493d-cde2-4362-8e1a-e84d3dd547f7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:WindChillInCelcius>
+         <tem:nCelcius>?</tem:nCelcius>
+         <tem:nWindSpeed>?</tem:nWindSpeed>
+      </tem:WindChillInCelcius>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/WindChillInCelciusRequest"/></con:call></con:operation><con:operation id="4c07c9b1-2410-4790-abde-0a07236b3496" isOneWay="false" action="" name="WindChillInFahrenheit" bindingOperationName="WindChillInFahrenheit" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5993debc-7b28-40ca-b257-9d5a7cd3419b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:WindChillInFahrenheit>
+         <tem:nFahrenheit>?</tem:nFahrenheit>
+         <tem:nWindSpeed>?</tem:nWindSpeed>
+      </tem:WindChillInFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/WindChillInFahrenheitRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4935b7f5-b8df-4143-adf6-ed5f3ca38ec7" wsaVersion="NONE" name="CurrencyConvertorSoap" type="wsdl" bindingName="{http://www.webserviceX.NET/}CurrencyConvertorSoap" soapVersion="1_1" anonymous="optional" definition="http://www.webservicex.com/CurrencyConvertor.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.com/CurrencyConvertor.asmx?wsdl"><con:part><con:url>http://www.webservicex.com/CurrencyConvertor.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
+      <s:element name="ConversionRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FromCurrency" type="tns:Currency"/>
+            <s:element minOccurs="1" maxOccurs="1" name="ToCurrency" type="tns:Currency"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Currency">
+        <s:restriction base="s:string">
+          <s:enumeration value="AFA"/>
+          <s:enumeration value="ALL"/>
+          <s:enumeration value="DZD"/>
+          <s:enumeration value="ARS"/>
+          <s:enumeration value="AWG"/>
+          <s:enumeration value="AUD"/>
+          <s:enumeration value="BSD"/>
+          <s:enumeration value="BHD"/>
+          <s:enumeration value="BDT"/>
+          <s:enumeration value="BBD"/>
+          <s:enumeration value="BZD"/>
+          <s:enumeration value="BMD"/>
+          <s:enumeration value="BTN"/>
+          <s:enumeration value="BOB"/>
+          <s:enumeration value="BWP"/>
+          <s:enumeration value="BRL"/>
+          <s:enumeration value="GBP"/>
+          <s:enumeration value="BND"/>
+          <s:enumeration value="BIF"/>
+          <s:enumeration value="XOF"/>
+          <s:enumeration value="XAF"/>
+          <s:enumeration value="KHR"/>
+          <s:enumeration value="CAD"/>
+          <s:enumeration value="CVE"/>
+          <s:enumeration value="KYD"/>
+          <s:enumeration value="CLP"/>
+          <s:enumeration value="CNY"/>
+          <s:enumeration value="COP"/>
+          <s:enumeration value="KMF"/>
+          <s:enumeration value="CRC"/>
+          <s:enumeration value="HRK"/>
+          <s:enumeration value="CUP"/>
+          <s:enumeration value="CYP"/>
+          <s:enumeration value="CZK"/>
+          <s:enumeration value="DKK"/>
+          <s:enumeration value="DJF"/>
+          <s:enumeration value="DOP"/>
+          <s:enumeration value="XCD"/>
+          <s:enumeration value="EGP"/>
+          <s:enumeration value="SVC"/>
+          <s:enumeration value="EEK"/>
+          <s:enumeration value="ETB"/>
+          <s:enumeration value="EUR"/>
+          <s:enumeration value="FKP"/>
+          <s:enumeration value="GMD"/>
+          <s:enumeration value="GHC"/>
+          <s:enumeration value="GIP"/>
+          <s:enumeration value="XAU"/>
+          <s:enumeration value="GTQ"/>
+          <s:enumeration value="GNF"/>
+          <s:enumeration value="GYD"/>
+          <s:enumeration value="HTG"/>
+          <s:enumeration value="HNL"/>
+          <s:enumeration value="HKD"/>
+          <s:enumeration value="HUF"/>
+          <s:enumeration value="ISK"/>
+          <s:enumeration value="INR"/>
+          <s:enumeration value="IDR"/>
+          <s:enumeration value="IQD"/>
+          <s:enumeration value="ILS"/>
+          <s:enumeration value="JMD"/>
+          <s:enumeration value="JPY"/>
+          <s:enumeration value="JOD"/>
+          <s:enumeration value="KZT"/>
+          <s:enumeration value="KES"/>
+          <s:enumeration value="KRW"/>
+          <s:enumeration value="KWD"/>
+          <s:enumeration value="LAK"/>
+          <s:enumeration value="LVL"/>
+          <s:enumeration value="LBP"/>
+          <s:enumeration value="LSL"/>
+          <s:enumeration value="LRD"/>
+          <s:enumeration value="LYD"/>
+          <s:enumeration value="LTL"/>
+          <s:enumeration value="MOP"/>
+          <s:enumeration value="MKD"/>
+          <s:enumeration value="MGF"/>
+          <s:enumeration value="MWK"/>
+          <s:enumeration value="MYR"/>
+          <s:enumeration value="MVR"/>
+          <s:enumeration value="MTL"/>
+          <s:enumeration value="MRO"/>
+          <s:enumeration value="MUR"/>
+          <s:enumeration value="MXN"/>
+          <s:enumeration value="MDL"/>
+          <s:enumeration value="MNT"/>
+          <s:enumeration value="MAD"/>
+          <s:enumeration value="MZM"/>
+          <s:enumeration value="MMK"/>
+          <s:enumeration value="NAD"/>
+          <s:enumeration value="NPR"/>
+          <s:enumeration value="ANG"/>
+          <s:enumeration value="NZD"/>
+          <s:enumeration value="NIO"/>
+          <s:enumeration value="NGN"/>
+          <s:enumeration value="KPW"/>
+          <s:enumeration value="NOK"/>
+          <s:enumeration value="OMR"/>
+          <s:enumeration value="XPF"/>
+          <s:enumeration value="PKR"/>
+          <s:enumeration value="XPD"/>
+          <s:enumeration value="PAB"/>
+          <s:enumeration value="PGK"/>
+          <s:enumeration value="PYG"/>
+          <s:enumeration value="PEN"/>
+          <s:enumeration value="PHP"/>
+          <s:enumeration value="XPT"/>
+          <s:enumeration value="PLN"/>
+          <s:enumeration value="QAR"/>
+          <s:enumeration value="ROL"/>
+          <s:enumeration value="RUB"/>
+          <s:enumeration value="WST"/>
+          <s:enumeration value="STD"/>
+          <s:enumeration value="SAR"/>
+          <s:enumeration value="SCR"/>
+          <s:enumeration value="SLL"/>
+          <s:enumeration value="XAG"/>
+          <s:enumeration value="SGD"/>
+          <s:enumeration value="SKK"/>
+          <s:enumeration value="SIT"/>
+          <s:enumeration value="SBD"/>
+          <s:enumeration value="SOS"/>
+          <s:enumeration value="ZAR"/>
+          <s:enumeration value="LKR"/>
+          <s:enumeration value="SHP"/>
+          <s:enumeration value="SDD"/>
+          <s:enumeration value="SRG"/>
+          <s:enumeration value="SZL"/>
+          <s:enumeration value="SEK"/>
+          <s:enumeration value="CHF"/>
+          <s:enumeration value="SYP"/>
+          <s:enumeration value="TWD"/>
+          <s:enumeration value="TZS"/>
+          <s:enumeration value="THB"/>
+          <s:enumeration value="TOP"/>
+          <s:enumeration value="TTD"/>
+          <s:enumeration value="TND"/>
+          <s:enumeration value="TRL"/>
+          <s:enumeration value="USD"/>
+          <s:enumeration value="AED"/>
+          <s:enumeration value="UGX"/>
+          <s:enumeration value="UAH"/>
+          <s:enumeration value="UYU"/>
+          <s:enumeration value="VUV"/>
+          <s:enumeration value="VEB"/>
+          <s:enumeration value="VND"/>
+          <s:enumeration value="YER"/>
+          <s:enumeration value="YUM"/>
+          <s:enumeration value="ZMK"/>
+          <s:enumeration value="ZWD"/>
+          <s:enumeration value="TRY"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ConversionRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConversionRateResult" type="s:double"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="double" type="s:double"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConversionRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ConversionRate"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ConversionRateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpGetIn">
+    <wsdl:part name="FromCurrency" type="s:string"/>
+    <wsdl:part name="ToCurrency" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpGetOut">
+    <wsdl:part name="Body" element="tns:double"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpPostIn">
+    <wsdl:part name="FromCurrency" type="s:string"/>
+    <wsdl:part name="ToCurrency" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpPostOut">
+    <wsdl:part name="Body" element="tns:double"/>
+  </wsdl:message>
+  <wsdl:portType name="CurrencyConvertorSoap">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateSoapIn"/>
+      <wsdl:output message="tns:ConversionRateSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CurrencyConvertorHttpGet">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateHttpGetIn"/>
+      <wsdl:output message="tns:ConversionRateHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CurrencyConvertorHttpPost">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateHttpPostIn"/>
+      <wsdl:output message="tns:ConversionRateHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CurrencyConvertorSoap" type="tns:CurrencyConvertorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConversionRate">
+      <soap:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorSoap12" type="tns:CurrencyConvertorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConversionRate">
+      <soap12:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorHttpGet" type="tns:CurrencyConvertorHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="ConversionRate">
+      <http:operation location="/ConversionRate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorHttpPost" type="tns:CurrencyConvertorHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="ConversionRate">
+      <http:operation location="/ConversionRate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CurrencyConvertor">
+    <wsdl:port name="CurrencyConvertorSoap" binding="tns:CurrencyConvertorSoap">
+      <soap:address location="http://www.webservicex.com/CurrencyConvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorSoap12" binding="tns:CurrencyConvertorSoap12">
+      <soap12:address location="http://www.webservicex.com/CurrencyConvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorHttpGet" binding="tns:CurrencyConvertorHttpGet">
+      <http:address location="http://www.webservicex.com/CurrencyConvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorHttpPost" binding="tns:CurrencyConvertorHttpPost">
+      <http:address location="http://www.webservicex.com/CurrencyConvertor.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint></con:endpoints><con:operation id="c6be74be-cdde-46bb-b429-0aa545962eee" isOneWay="false" action="http://www.webserviceX.NET/ConversionRate" name="ConversionRate" bindingOperationName="ConversionRate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d81adfef-79ce-435f-9213-dbb7e8013fee" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>?</web:FromCurrency>
+         <web:ToCurrency>?</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ConversionRate"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1b4c14cd-160f-48b5-859a-ffb591bb1ee6" wsaVersion="NONE" name="WeatherSoap" type="wsdl" bindingName="{http://ws.cdyne.com/WeatherWS/}WeatherSoap" soapVersion="1_1" anonymous="optional" definition="http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl"><con:part><con:url>http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.cdyne.com/WeatherWS/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.cdyne.com/WeatherWS/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.cdyne.com/WeatherWS/">
+      <s:element name="GetWeatherInformation">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetWeatherInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeatherInformationResult" type="tns:ArrayOfWeatherDescription"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWeatherDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WeatherDescription" type="tns:WeatherDescription"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WeatherDescription">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="WeatherID" type="s:short"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PictureURL" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCityForecastByZIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZIP" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityForecastByZIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityForecastByZIPResult" type="tns:ForecastReturn"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ForecastReturn">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseText" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WeatherStationCity" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ForecastResult" type="tns:ArrayOfForecast"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfForecast">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Forecast" nillable="true" type="tns:Forecast"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Forecast">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="WeatherID" type="s:short"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Desciption" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Temperatures" type="tns:temp"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ProbabilityOfPrecipiation" type="tns:POP"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="temp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MorningLow" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DaytimeHigh" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nighttime" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Daytime" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCityWeatherByZIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZIP" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityWeatherByZIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCityWeatherByZIPResult" type="tns:WeatherReturn"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WeatherReturn">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseText" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WeatherStationCity" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="WeatherID" type="s:short"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Temperature" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RelativeHumidity" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Wind" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Pressure" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Visibility" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WindChill" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfWeatherDescription" nillable="true" type="tns:ArrayOfWeatherDescription"/>
+      <s:element name="ForecastReturn" nillable="true" type="tns:ForecastReturn"/>
+      <s:element name="WeatherReturn" type="tns:WeatherReturn"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWeatherInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeatherInformation"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeatherInformationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityForecastByZIP"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityForecastByZIPResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityWeatherByZIP"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityWeatherByZIPResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherInformationHttpGetIn"/>
+  <wsdl:message name="GetWeatherInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWeatherDescription"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPHttpGetIn">
+    <wsdl:part name="ZIP" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:ForecastReturn"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPHttpGetIn">
+    <wsdl:part name="ZIP" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:WeatherReturn"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherInformationHttpPostIn"/>
+  <wsdl:message name="GetWeatherInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWeatherDescription"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPHttpPostIn">
+    <wsdl:part name="ZIP" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityForecastByZIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:ForecastReturn"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPHttpPostIn">
+    <wsdl:part name="ZIP" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCityWeatherByZIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:WeatherReturn"/>
+  </wsdl:message>
+  <wsdl:portType name="WeatherSoap">
+    <wsdl:operation name="GetWeatherInformation">
+      <wsdl:documentation>Gets Information for each WeatherID</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherInformationSoapIn"/>
+      <wsdl:output message="tns:GetWeatherInformationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <wsdl:documentation>Allows you to get your City Forecast Over the Next 7 Days, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityForecastByZIPSoapIn"/>
+      <wsdl:output message="tns:GetCityForecastByZIPSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <wsdl:documentation>Allows you to get your City's Weather, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityWeatherByZIPSoapIn"/>
+      <wsdl:output message="tns:GetCityWeatherByZIPSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WeatherHttpGet">
+    <wsdl:operation name="GetWeatherInformation">
+      <wsdl:documentation>Gets Information for each WeatherID</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherInformationHttpGetIn"/>
+      <wsdl:output message="tns:GetWeatherInformationHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <wsdl:documentation>Allows you to get your City Forecast Over the Next 7 Days, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityForecastByZIPHttpGetIn"/>
+      <wsdl:output message="tns:GetCityForecastByZIPHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <wsdl:documentation>Allows you to get your City's Weather, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityWeatherByZIPHttpGetIn"/>
+      <wsdl:output message="tns:GetCityWeatherByZIPHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WeatherHttpPost">
+    <wsdl:operation name="GetWeatherInformation">
+      <wsdl:documentation>Gets Information for each WeatherID</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherInformationHttpPostIn"/>
+      <wsdl:output message="tns:GetWeatherInformationHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <wsdl:documentation>Allows you to get your City Forecast Over the Next 7 Days, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityForecastByZIPHttpPostIn"/>
+      <wsdl:output message="tns:GetCityForecastByZIPHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <wsdl:documentation>Allows you to get your City's Weather, which is updated hourly. U.S. Only</wsdl:documentation>
+      <wsdl:input message="tns:GetCityWeatherByZIPHttpPostIn"/>
+      <wsdl:output message="tns:GetCityWeatherByZIPHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WeatherSoap" type="tns:WeatherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeatherInformation">
+      <soap:operation soapAction="http://ws.cdyne.com/WeatherWS/GetWeatherInformation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <soap:operation soapAction="http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <soap:operation soapAction="http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherSoap12" type="tns:WeatherSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeatherInformation">
+      <soap12:operation soapAction="http://ws.cdyne.com/WeatherWS/GetWeatherInformation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <soap12:operation soapAction="http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <soap12:operation soapAction="http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherHttpGet" type="tns:WeatherHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetWeatherInformation">
+      <http:operation location="/GetWeatherInformation"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <http:operation location="/GetCityForecastByZIP"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <http:operation location="/GetCityWeatherByZIP"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherHttpPost" type="tns:WeatherHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetWeatherInformation">
+      <http:operation location="/GetWeatherInformation"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityForecastByZIP">
+      <http:operation location="/GetCityForecastByZIP"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityWeatherByZIP">
+      <http:operation location="/GetCityWeatherByZIP"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Weather">
+    <wsdl:port name="WeatherSoap" binding="tns:WeatherSoap">
+      <soap:address location="http://wsf.cdyne.com/WeatherWS/Weather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherSoap12" binding="tns:WeatherSoap12">
+      <soap12:address location="http://wsf.cdyne.com/WeatherWS/Weather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherHttpGet" binding="tns:WeatherHttpGet">
+      <http:address location="http://wsf.cdyne.com/WeatherWS/Weather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherHttpPost" binding="tns:WeatherHttpPost">
+      <http:address location="http://wsf.cdyne.com/WeatherWS/Weather.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://wsf.cdyne.com/WeatherWS/Weather.asmx</con:endpoint></con:endpoints><con:operation id="ae5d4c1b-a27a-4491-882e-20c94ca86542" isOneWay="false" action="http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP" name="GetCityForecastByZIP" bindingOperationName="GetCityForecastByZIP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f4c6129a-2d1f-433f-b1b3-6ef6bb12476f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://wsf.cdyne.com/WeatherWS/Weather.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:weat="http://ws.cdyne.com/WeatherWS/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <weat:GetCityForecastByZIP>
+         <!--Optional:-->
+         <weat:ZIP>?</weat:ZIP>
+      </weat:GetCityForecastByZIP>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP"/></con:call></con:operation><con:operation id="1bea92bd-3ebb-488d-80ce-b8af47695ec5" isOneWay="false" action="http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP" name="GetCityWeatherByZIP" bindingOperationName="GetCityWeatherByZIP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a21f4c00-67b0-4c64-8061-626bf9469bef" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://wsf.cdyne.com/WeatherWS/Weather.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:weat="http://ws.cdyne.com/WeatherWS/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <weat:GetCityWeatherByZIP>
+         <!--Optional:-->
+         <weat:ZIP>?</weat:ZIP>
+      </weat:GetCityWeatherByZIP>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP"/></con:call></con:operation><con:operation id="0d907c30-b03f-472a-9bdd-987caafc4bbf" isOneWay="false" action="http://ws.cdyne.com/WeatherWS/GetWeatherInformation" name="GetWeatherInformation" bindingOperationName="GetWeatherInformation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d126cb64-42b4-4b2c-8663-64574801dc8b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://wsf.cdyne.com/WeatherWS/Weather.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:weat="http://ws.cdyne.com/WeatherWS/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <weat:GetWeatherInformation/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.cdyne.com/WeatherWS/GetWeatherInformation"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1610fe62-bb5e-4d8d-b4b1-6dae8dbe4866" wsaVersion="NONE" name="CalculatorSoap" type="wsdl" bindingName="{http://tempuri.org/}CalculatorSoap" soapVersion="1_1" anonymous="optional" definition="http://www.dneonline.com/calculator.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.dneonline.com/calculator.asmx?WSDL"><con:part><con:url>http://www.dneonline.com/calculator.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subtract">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubtractResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Multiply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplyResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Divide">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DivideResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add"/>
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapIn">
+    <wsdl:part name="parameters" element="tns:Subtract"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractResponse"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapIn">
+    <wsdl:part name="parameters" element="tns:Multiply"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapIn">
+    <wsdl:part name="parameters" element="tns:Divide"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapOut">
+    <wsdl:part name="parameters" element="tns:DivideResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorSoap">
+    <wsdl:operation name="Add">
+      <wsdl:documentation>Adds two integers. This is a test WebService. ©DNE Online</wsdl:documentation>
+      <wsdl:input message="tns:AddSoapIn"/>
+      <wsdl:output message="tns:AddSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input message="tns:SubtractSoapIn"/>
+      <wsdl:output message="tns:SubtractSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input message="tns:MultiplySoapIn"/>
+      <wsdl:output message="tns:MultiplySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input message="tns:DivideSoapIn"/>
+      <wsdl:output message="tns:DivideSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoap" type="tns:CalculatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculatorSoap12" type="tns:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port name="CalculatorSoap" binding="tns:CalculatorSoap">
+      <soap:address location="http://www.dneonline.com/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12" binding="tns:CalculatorSoap12">
+      <soap12:address location="http://www.dneonline.com/calculator.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint></con:endpoints><con:operation id="1ea7a758-53bb-4116-a0e5-651fa16d56cb" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eeb355fb-4662-4e6a-ace6-f431079022db" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Add>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Add"/></con:call></con:operation><con:operation id="fb8e0296-5dd5-41b2-b542-3a5dc17275fb" isOneWay="false" action="http://tempuri.org/Divide" name="Divide" bindingOperationName="Divide" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6409c4b-c93e-4722-9b9e-b05e10618c27" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Divide>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Divide"/></con:call></con:operation><con:operation id="81576e96-4913-4839-8afd-f9e17b179577" isOneWay="false" action="http://tempuri.org/Multiply" name="Multiply" bindingOperationName="Multiply" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="004159dc-d9ce-4bf1-a6a3-4713ed177a42" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Multiply>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Multiply"/></con:call></con:operation><con:operation id="a4780364-e415-4255-b31c-3927052008fd" isOneWay="false" action="http://tempuri.org/Subtract" name="Subtract" bindingOperationName="Subtract" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ecc588d-0bb3-4650-9cd2-7c59f115daa2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Subtract>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Subtract"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1397ad41-43fc-4d71-946d-8bf4c679dd9c" wsaVersion="NONE" name="GlobalWeatherSoap" type="wsdl" bindingName="{http://www.webserviceX.NET}GlobalWeatherSoap" soapVersion="1_1" anonymous="optional" definition="http://www.webservicex.net/globalweather.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.net/globalweather.asmx?WSDL"><con:part><con:url>http://www.webservicex.net/globalweather.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET">
+      <s:element name="GetWeather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeatherResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCitiesByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCitiesByCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCitiesByCountryResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWeatherSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeather"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeatherResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCitiesByCountry"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCitiesByCountryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherHttpGetIn">
+    <wsdl:part name="CityName" type="s:string"/>
+    <wsdl:part name="CountryName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountryHttpGetIn">
+    <wsdl:part name="CountryName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherHttpPostIn">
+    <wsdl:part name="CityName" type="s:string"/>
+    <wsdl:part name="CountryName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountryHttpPostIn">
+    <wsdl:part name="CountryName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCitiesByCountryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:portType name="GlobalWeatherSoap">
+    <wsdl:operation name="GetWeather">
+      <wsdl:documentation>Get weather report for all major cities around the world.</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherSoapIn"/>
+      <wsdl:output message="tns:GetWeatherSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <wsdl:documentation>Get all major cities by country name(full / part).</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesByCountrySoapIn"/>
+      <wsdl:output message="tns:GetCitiesByCountrySoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GlobalWeatherHttpGet">
+    <wsdl:operation name="GetWeather">
+      <wsdl:documentation>Get weather report for all major cities around the world.</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherHttpGetIn"/>
+      <wsdl:output message="tns:GetWeatherHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <wsdl:documentation>Get all major cities by country name(full / part).</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesByCountryHttpGetIn"/>
+      <wsdl:output message="tns:GetCitiesByCountryHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GlobalWeatherHttpPost">
+    <wsdl:operation name="GetWeather">
+      <wsdl:documentation>Get weather report for all major cities around the world.</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherHttpPostIn"/>
+      <wsdl:output message="tns:GetWeatherHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <wsdl:documentation>Get all major cities by country name(full / part).</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesByCountryHttpPostIn"/>
+      <wsdl:output message="tns:GetCitiesByCountryHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GlobalWeatherSoap" type="tns:GlobalWeatherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeather">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetWeather" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetCitiesByCountry" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GlobalWeatherSoap12" type="tns:GlobalWeatherSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeather">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetWeather" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetCitiesByCountry" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GlobalWeatherHttpGet" type="tns:GlobalWeatherHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetWeather">
+      <http:operation location="/GetWeather"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <http:operation location="/GetCitiesByCountry"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GlobalWeatherHttpPost" type="tns:GlobalWeatherHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetWeather">
+      <http:operation location="/GetWeather"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <http:operation location="/GetCitiesByCountry"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GlobalWeather">
+    <wsdl:port name="GlobalWeatherSoap" binding="tns:GlobalWeatherSoap">
+      <soap:address location="http://www.webservicex.net/globalweather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="GlobalWeatherSoap12" binding="tns:GlobalWeatherSoap12">
+      <soap12:address location="http://www.webservicex.net/globalweather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="GlobalWeatherHttpGet" binding="tns:GlobalWeatherHttpGet">
+      <http:address location="http://www.webservicex.net/globalweather.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="GlobalWeatherHttpPost" binding="tns:GlobalWeatherHttpPost">
+      <http:address location="http://www.webservicex.net/globalweather.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.webservicex.net/globalweather.asmx</con:endpoint></con:endpoints><con:operation id="028f20be-f70f-4859-921f-1dbaf447a584" isOneWay="false" action="http://www.webserviceX.NET/GetCitiesByCountry" name="GetCitiesByCountry" bindingOperationName="GetCitiesByCountry" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="313005fb-b4c7-4d27-a3a4-cd53311dab30" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/globalweather.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetCitiesByCountry>
+         <!--Optional:-->
+         <web:CountryName>?</web:CountryName>
+      </web:GetCitiesByCountry>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetCitiesByCountry"/></con:call></con:operation><con:operation id="bd624b95-61a8-4588-993d-31b2dd1fd103" isOneWay="false" action="http://www.webserviceX.NET/GetWeather" name="GetWeather" bindingOperationName="GetWeather" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="47e66adc-aafb-4548-a502-f2966a898dbf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/globalweather.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetWeather>
+         <!--Optional:-->
+         <web:CityName>?</web:CityName>
+         <!--Optional:-->
+         <web:CountryName>?</web:CountryName>
+      </web:GetWeather>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetWeather"/></con:call></con:operation></con:interface><con:testSuite id="aa304d10-2304-474d-b3dd-f659591f9532" name="TestSuite1_PropertyTransfer"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6297c2a2-2a3e-46e9-a50e-3e33ae9bdaa2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1_PropertyTransfer" searchProperties="true"><con:settings/><con:testStep type="request" name="TestRequest1_CelsiusToFahrenhite" id="fb83b277-27e1-4d23-bdde-5ee346613994"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="TestRequest1_CelsiusToFahrenhite" id="6512d4ed-3244-47a8-b612-e08d8286e846"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>5</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f7aef188-72b4-48df-88e4-d5d1fb5f9c69"/><con:assertion type="XPath Match" id="40c41a25-3fe6-4cea-941e-fd43cad5b1d7" name="XPath Match"><con:configuration><path>declare namespace m='http://webservices.daehosting.com/temperature';
+//m:CelciusToFahrenheitResponse[1]/m:CelciusToFahrenheitResult[1]</path><content>41</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer1_From TestRequest1_TOTestRequest2" id="7b91e045-2220-45a3-8ffb-801bdb8f9ecc"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>p</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>TestRequest1_CelsiusToFahrenhite</con:sourceStep><con:sourcePath>declare namespace m='http://webservices.daehosting.com/temperature';
+//m:CelciusToFahrenheitResponse[1]/m:CelciusToFahrenheitResult[1]</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>TestRequest2_FahrenhiteToCelsius</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:FahrenheitToCelcius[1]/tem:nFahrenheit[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="TestRequest2_FahrenhiteToCelsius" id="8102120a-c7e1-4d4b-82eb-1d3352ae11a7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>FahrenheitToCelcius</con:operation><con:request name="TestRequest2_FahrenhiteToCelsius" id="ab3a867e-8cc8-45d6-bfb0-240f83761411"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:FahrenheitToCelcius>
+         <tem:nFahrenheit>41</tem:nFahrenheit>
+      </tem:FahrenheitToCelcius>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="82790069-2c9b-4b85-9a59-536cdff7533e"/><con:assertion type="XPath Match" id="01f9f129-a957-4629-920d-585d2e3b095d" name="XPath Match"><con:configuration><path>declare namespace m='http://webservices.daehosting.com/temperature';
+//m:FahrenheitToCelciusResponse[1]/m:FahrenheitToCelciusResult[1]</path><content>5</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>16277ba6-a835-4fc2-8e95-dce21480bf1d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="b5ba5e2f-2f5f-41c1-bce7-6ad94ed6b83f" name="TestSuite2_UsingCustomPropertyTrasnfer_DefinedForTestCase_UsedInTestStpes"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="83d7058a-4cbc-4ffc-9aa0-dbfbe603c289" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1_UsingCustomPropertyTransfer_TestCaseLevel" searchProperties="true"><con:settings/><con:testStep type="request" name="TestSte1_CurrencyConvertion" id="2e1edbb7-6c58-41d4-8782-b991b4dc31fa"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="TestSte1_CurrencyConvertion" id="dca1e1fd-e061-4755-953a-dd8e4483a121"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3ae4344b-8873-4686-aa2b-d86cb2b17f9d"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer1_UsingCustomPropertyTransfer_TestCaseLevel" id="2908affc-fa13-4130-9c38-b34997405220"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>TestSte1_CurrencyConvertion</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>CustomProperty_Varable_ForTestCase</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer_UsingCustomPropertyTransfer_TestCaseLevel" id="259ff33b-3428-4e8f-908a-b18a72f332d9"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>CustomProperty_Varable_ForTestCase</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>TestStep2_TemparatureConvertion</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="TestStep2_TemparatureConvertion" id="0e1686f8-71d8-4c58-bc2c-da924a097197"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="TestStep2_TemparatureConvertion" id="ff8934c0-779d-44ee-93fa-f971b3d34b1f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.24</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="62dd7fe0-02ee-49fd-8f5c-53772e242a69"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>CustomProperty_Varable_ForTestCase</con:name><con:value>61.24</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="55c8e9f1-8845-4bf1-9b1c-58938c47bc6b" name="TestSuite3_UsingCustomPropertyTrasnfer_DefinedForTestCase_UsedInTestStpes"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5fa414ab-2a82-48ab-a371-239019639506" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1_UsingCustomPropertyTransfer" searchProperties="true"><con:settings/><con:testStep type="request" name="TestStep_CurrencyConvertion" id="bf1d948d-f92f-4794-8e90-8e38179d4c0a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="TestStep_CurrencyConvertion" id="53bd9e32-459e-410f-a2c6-d6f2e50d3186"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="40d9156e-cbef-4a7d-9306-77150a71c439"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer1_UsingCustomPropertyTransfer_TestSuiteLevel" id="abf25ca3-b4ea-428b-a716-8392bd40e83e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>TestStep_CurrencyConvertion</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>CustomPropertyVairbale_ForTestSuite</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="670ee4eb-8adb-4cda-9872-d19ae98c6ced" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase2_UsingCustomPropertyTransfer" searchProperties="true"><con:settings/><con:testStep type="transfer" name="PropertyTransfer2_UsingCustomPropertyTransfer_TestSuiteLevel" id="2013c348-515c-41ce-a7d5-c4404ee06514"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>CustomPropertyVairbale_ForTestSuite</con:sourceType><con:sourceStep>#TestSuite#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>TestStep_TemparatureConvertion</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="TestStep_TemparatureConvertion" id="db3a7dfb-58ba-4189-905b-66d486cd4b5b"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="TestStep_TemparatureConvertion" id="f2d7b4a8-bbfc-4f5e-a2a3-11f289cc0712"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.24</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1ab9a2f4-558d-460b-b267-dccf6089d895"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>CustomPropertyVairbale_ForTestSuite</con:name><con:value>61.24</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite id="21d75055-1562-4955-bf7d-3ef0a760ff5d" name="TestSuite4_UsingCustomPropertyTrasnfer_DefinedForProject_UsedInTestSuites_A"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="52542336-2940-4405-a994-926ffb66e37d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1_UsingCustomPropertyTransfer_ProjectLevel" searchProperties="true"><con:settings/><con:testStep type="request" name="TestStep_CurrencyConvertion" id="32b1235b-0c6a-4e63-992f-413a8dd2e635"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="TestStep_CurrencyConvertion" id="53bd9e32-459e-410f-a2c6-d6f2e50d3186"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="40d9156e-cbef-4a7d-9306-77150a71c439"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer1_UsingCustomPropertyTransfer_ProjectLevel" id="e6ecc3f2-2130-460c-b1c8-d53775b0fdb4"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>TestStep_CurrencyConvertion</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>CustomPropertyVairbale_ForaProject</con:targetType><con:targetStep>#Project#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>Var1_USD</con:name><con:value>61.278</con:value></con:property><con:property><con:name>Var2_INR</con:name><con:value/></con:property><con:property><con:name>Var3_AUD</con:name><con:value/></con:property><con:property><con:name>Var4_QAR</con:name><con:value/></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite id="391a69df-b84c-4b06-8960-ca0e1f3d1f7b" name="TestSuite4_UsingCustomPropertyTrasnfer_DefinedForProject_UsedInTestSuites_B"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="43987378-6958-4236-8b57-e8f8870a7b07" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase_UsingCustomPropertyTransfer_ProjectLevel" searchProperties="true"><con:settings/><con:testStep type="transfer" name="PropertyTransfer2_UsingCustomPropertyTransfer_projectLevel" id="f1ac740a-49d3-460a-abf4-d3663f0ccd1e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>CustomPropertyVairbale_ForaProject</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>TestStep_TemparatureConvertion</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="TestStep_TemparatureConvertion" id="4947c92b-fa0c-4f95-83db-31a115785b2c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="TestStep_TemparatureConvertion" id="f2d7b4a8-bbfc-4f5e-a2a3-11f289cc0712"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.24</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1ab9a2f4-558d-460b-b267-dccf6089d895"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>Var1_USD</con:name><con:value>61.278</con:value></con:property><con:property><con:name>Var2_INR</con:name><con:value/></con:property><con:property><con:name>Var3_AUD</con:name><con:value/></con:property><con:property><con:name>Var4_QAR</con:name><con:value/></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite id="fca99339-d65e-4fe5-a9a4-db2532fc4ec4" name="TestSuite6_UsingGlobalPropertyTranser_InBetweenTwoSteps"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="277339f3-6d5f-4348-b9f3-fb463da813b5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="CurrencyConverter" id="b761ef3d-5197-4f13-a9fc-300abd9e65cf"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="CurrencyConverter" id="82400d1b-948f-4c18-8349-ab9762136e84"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="eb51c280-c116-479c-a62a-4d2ccd2b846f"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="c6cc4a24-a5a1-4d8e-a7a3-5a3e8e72a946"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>GlobalPropertyTransfer</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>CurrencyConverter</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>GlobalPropertyTransfer_Variable_ForTestCaseLevel </con:targetType><con:targetStep>#Global#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="CelsisuToFahrenhite" id="5d9e492a-c8b5-4675-873d-55f0bb8d7351"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="CelsisuToFahrenhite" id="5b1913da-faa9-4d33-b4eb-6a917ade7616"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>${GlobalPropertyTransfer_Variable_ForTestCaseLevel }</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="43819b43-41af-4a7b-90b1-cd117c2a6245"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="0f5ac1bc-ab04-4822-a066-61d5e2c6cc1d" name="TestSuite7_UsingGlobalPropertyTransfer_inBetweenTwoCases"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1f1e5195-58f8-4f3a-b10a-2c8e53d8f1aa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="CurrencyConverter" id="6ae4b7c0-21af-4a50-bd23-c09515164cb0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="CurrencyConverter" id="69947660-8564-46e3-97a0-0b6c56a2cb5f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2df40b7a-dde4-4cd1-8bb4-6b9a3f64ac39"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="b0ac07da-8a7a-49b0-b387-7c5133fed63e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>GlobalPropertyTrasnfer</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>CurrencyConverter</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>GlobalPropertyTransfer_Variable_ForTestSuiteLevel</con:targetType><con:targetStep>#Global#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="3b2b2aae-0adc-4c51-9c3c-75728cfc11c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="transfer" name="Property Transfer" id="9c9c3f22-cb00-422e-b822-96e431e6361e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>GlobalPropertyTransfer</con:name><con:sourceType>GlobalPropertyTransfer_Variable_ForTestSuiteLevel</con:sourceType><con:sourceStep>#Global#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>CelsiusToFahrenite</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="CelsiusToFahrenite" id="caf75973-bd57-429a-b246-335d6b7ee4ad"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="CelsiusToFahrenite" id="b1b17b45-52d4-425f-bc9d-7c119ef42d20"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.46</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="16963360-9b4a-47c7-b1ad-3a562318bbc1"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>9c9c3f22-cb00-422e-b822-96e431e6361e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="706c27ca-d1d4-4be5-a437-23a82066c175" name="TestSuite8_UsingGlobalPropertyTransfer_InBetweenTwoTestSuite_A"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3dd02f75-6742-47c2-a2be-ed3e10cfcc89" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CurrencyConverter" searchProperties="true"><con:settings/><con:testStep type="request" name="CurrencyConverter" id="e8ada679-a932-4cd8-9649-b3b0bcf2ff2c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="CurrencyConverter" id="dcf8b228-59b4-42a7-b04a-93a042a2e994"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.com/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>INR</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5a0f27fc-4bc3-4d20-9cb8-52826112de91"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="7d17e3a3-393b-4002-9841-f46e10c1abfd"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>GlobalPropertyTransfer</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>CurrencyConverter</con:sourceStep><con:sourcePath>declare namespace ns1='http://www.webserviceX.NET/';
+//ns1:ConversionRateResponse[1]/ns1:ConversionRateResult[1]</con:sourcePath><con:targetType>GlobalPropertyTransfer_Variable_ForProjectLevel</con:targetType><con:targetStep>#Global#</con:targetStep><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="88680c65-6558-465c-b21b-0ec957a7b121" name="TestSuite9_UsingGlobalPropertyTransfer_IbnBetweenTwoTestSuite_B"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ded85bb5-4a85-4e7c-b029-785650cddca4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="transfer" name="Property Transfer" id="7e93de89-1d98-4181-acf8-a8dc75b13524"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>GlobalPropertyTransfer</con:name><con:sourceType>GlobalPropertyTransfer_Variable_ForProjectLevel</con:sourceType><con:sourceStep>#Global#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>CelsiusToFahrenhite</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="CelsiusToFahrenhite" id="aac01c8d-4316-4655-8117-56f9513f9bb0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="CelsiusToFahrenhite" id="ce92235d-1727-464d-8fe5-48e0c100774d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.46</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="fdc424b0-0c27-45d2-9d2c-4185957c8565"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="3c4b91f4-7aa8-4f8d-a114-d049e5182ba8" name="TestSuite10_GlobalPropertiesTransfer_InDifferentProject_A"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="df47892d-a740-4357-a3d1-226f3ba5f85f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="transfer" name="Property Transfer" id="3652080c-7677-42cf-9227-278b978c0322"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>PT</con:name><con:sourceType>GlobalPropertyTransfer_Variable_ForCurrencyCoverterProject_AND_MultipleProjects</con:sourceType><con:sourceStep>#Global#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>Test Request</con:targetStep><con:targetPath>declare namespace tem='http://webservices.daehosting.com/temperature';
+//tem:CelciusToFahrenheit[1]/tem:nCelcius[1]</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="Test Request" id="324088cb-2364-40a2-a448-2e89e9383404"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="Test Request" id="03fd1cfa-0055-4f60-af69-c67f04bd00b2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>61.24</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="544601d3-882f-4297-907d-35ecead5ca67"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties><con:property><con:name>CustomPropertyVairbale_ForaProject</con:name><con:value>61.24</con:value></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:reportTemplates><con:name>myreport</con:name><con:reportType>PROJECT</con:reportType><con:reportLevel>MAINREPORT</con:reportLevel><con:data><![CDATA[<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportTemplate" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <property name="ireport.encoding" value="UTF-8"/>
+   <template>"../../styles.jrtx"</template>
+   <!--FIELDS & PARAMS-->
+   <title>
+      <band height="70">
+         <textField>
+            <reportElement x="159" y="13" width="229" height="42"/>
+            <textElement>
+               <font size="26"/>
+            </textElement>
+            <textFieldExpression class="java.lang.String">$F{name} + " Report"</textFieldExpression>
+         </textField>
+      </band>
+   </title>
+   <pageHeader>
+      <band/>
+   </pageHeader>
+   <detail>
+      <band height="122">
+         <!--SUBREPORTS UNDER HERE-->
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestStepResults}</dataSourceExpression>
+            <subreportExpression>"subreport:TestStepResultsReport"</subreportExpression>
+         </subreport>
+      </band>
+   </detail>
+</jasperReport>]]></con:data><con:subreports>TestStepResultsReport</con:subreports><con:scope>PROJECT</con:scope></con:reportTemplates><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>

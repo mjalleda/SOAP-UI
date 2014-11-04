@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f32d317d-4d53-49f2-8ce9-7d04325a2e05" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CelciusToFahrenheitTestCase-Tester1" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f32d317d-4d53-49f2-8ce9-7d04325a2e05fileName">TestCase1-Tester</con:setting></con:settings><con:testStep type="request" id="33cb6eff-1c2a-446d-b2d4-9df575ef3c0d" name="CelciusToFahrenheit"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>CelciusToFahrenheit</con:operation><con:request name="CelciusToFahrenheit" id="9058e55f-2075-46d8-a82f-b50704f4c62d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CelciusToFahrenheit>
+         <tem:nCelcius>?</tem:nCelcius>
+      </tem:CelciusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/CelciusToFahrenheitRequest" mustUnderstand="NONE" version="200508"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>33cb6eff-1c2a-446d-b2d4-9df575ef3c0d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="26e3aa40-4d99-4d34-b06f-e025fd8879c9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WindChillInCelciusTestCase-Tester3" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="26e3aa40-4d99-4d34-b06f-e025fd8879c9fileName">WindChillInCelciusTestCase-Tester3</con:setting></con:settings><con:testStep type="request" id="e2d32800-f23f-4c6d-ab9d-fadf4f9a3478" name="WindChillInCelcius"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TemperatureConversionsSoapBinding</con:interface><con:operation>WindChillInCelcius</con:operation><con:request name="WindChillInCelcius" id="cf580d3c-f980-4ff0-bfdc-f43bb984880f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.daehosting.com/services/TemperatureConversions.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://webservices.daehosting.com/temperature">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:WindChillInCelcius>
+         <tem:nCelcius>?</tem:nCelcius>
+         <tem:nWindSpeed>?</tem:nWindSpeed>
+      </tem:WindChillInCelcius>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://webservices.daehosting.com/temperature/TemperatureConversionsSoapType/WindChillInCelciusRequest" mustUnderstand="NONE" version="200508"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a7283c00-bbec-4439-a7cc-add215b111e8" activeEnvironment="Default" name="Project6_JDBCTestStep_UsingDelayTestStep" soapui-version="5.1.2" resourceRoot="" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6460ab70-f2c8-40d2-b6a8-c53def64269d" wsaVersion="NONE" name="Employee Web ServiceBinding" type="wsdl" bindingName="{Demo}Employee Web ServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost/Project/soapService.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost/Project/soapService.php?wsdl"><con:part><con:url>http://localhost/Project/soapService.php?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="Demo" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="Demo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="Demo">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+      <xsd:complexType name="detail">
+        <xsd:all>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="Company" type="xsd:string"/>
+          <xsd:element name="Designation" type="xsd:string"/>
+          <xsd:element name="Salary" type="xsd:double"/>
+          <xsd:element name="Experience" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="details">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:detail[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="aemp">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="company" type="xsd:string"/>
+          <xsd:element name="designation" type="xsd:string"/>
+          <xsd:element name="salary" type="xsd:double"/>
+          <xsd:element name="experience" type="xsd:string"/>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="addemp">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:aemp[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="demp">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="company" type="xsd:string"/>
+          <xsd:element name="designation" type="xsd:string"/>
+          <xsd:element name="salary" type="xsd:double"/>
+          <xsd:element name="experience" type="xsd:string"/>
+          <xsd:element name="Response" type="xsd:string"/>
+          <xsd:element name="FaultCode" type="xsd:string"/>
+          <xsd:element name="FaultString" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="delemp">
+        <xsd:complexContent>
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:demp[]" xmlns:wsdl1="http://schemas.xmlsoap.org/wsdl/"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="FindRequest">
+    <part name="Name" type="xsd:string"/>
+    <part name="Company" type="xsd:string"/>
+  </message>
+  <message name="FindResponse">
+    <part name="details" type="tns:details"/>
+  </message>
+  <message name="AddRequest">
+    <part name="Name" type="xsd:string"/>
+    <part name="Company" type="xsd:string"/>
+    <part name="Designation" type="xsd:string"/>
+    <part name="Salary" type="xsd:double"/>
+    <part name="Experience" type="xsd:string"/>
+  </message>
+  <message name="AddResponse">
+    <part name="addemp" type="tns:addemp"/>
+  </message>
+  <message name="DeleteRequest">
+    <part name="Name" type="xsd:string"/>
+  </message>
+  <message name="DeleteResponse">
+    <part name="delemp" type="tns:delemp"/>
+  </message>
+  <portType name="Employee Web ServicePortType">
+    <operation name="Find">
+      <input message="tns:FindRequest"/>
+      <output message="tns:FindResponse"/>
+    </operation>
+    <operation name="Add">
+      <input message="tns:AddRequest"/>
+      <output message="tns:AddResponse"/>
+    </operation>
+    <operation name="Delete">
+      <input message="tns:DeleteRequest"/>
+      <output message="tns:DeleteResponse"/>
+    </operation>
+  </portType>
+  <binding name="Employee Web ServiceBinding" type="tns:Employee Web ServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Find">
+      <soap:operation soapAction="Demo#find" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Add">
+      <soap:operation soapAction="Demo#add" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Delete">
+      <soap:operation soapAction="Demo#delete" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="Demo" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Employee Web Service">
+    <port name="Employee Web ServicePort" binding="tns:Employee Web ServiceBinding">
+      <soap:address location="http://localhost/Project/soapService.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/Project/soapService.php</con:endpoint></con:endpoints><con:operation id="6fa2efd1-54e8-444d-80d8-e6f23c3aed76" isOneWay="false" action="Demo#add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b2b66d7c-ecda-4bb0-bd07-2e09d0bf3a5b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Test10</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Test10</Company>
+         <Designation xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Test10</Designation>
+         <Salary xsi:type="xsd:double" xs:type="type:double" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">111111110</Salary>
+         <Experience xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">910</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7339811b-3408-4ceb-a6c7-862aa7684369" isOneWay="false" action="Demo#delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3f5c7cd6-ea37-42f5-b5a5-9edaf2251e61" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Test10</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f421d661-c4ff-4ec3-a867-ea88900d875e" isOneWay="false" action="Demo#find" name="Find" bindingOperationName="Find" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0681d618-ac76-4490-9891-e1070bb90e83" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Find soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Test10</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance"/>
+      </demo:Find>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Demo#find"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="0e8809ee-024e-4206-9f33-fb3ed77d256e" name="TestSuite1_JDBCRequestTest"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="72bfd941-a4a3-4dbe-9986-bf402908c383" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1_ExecuteAllEmployeeOperations_DelayTestStep" searchProperties="true"><con:settings/><con:testStep type="request" name="Add_Employee_InDB" id="b799586c-3cb1-422a-a51d-62bf4255d41e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Add</con:operation><con:request name="Add_Employee_InDB" id="3d476f7f-5622-4a5e-a419-9c3193a9df90"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Company>
+         <Designation xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Designation>
+         <Salary xsi:type="xsd:double" xs:type="type:double" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">100000</Salary>
+         <Experience xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">9</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2c314949-2621-4e93-a5b2-e89adf93f867"/><con:assertion type="Simple Contains" id="214957fd-2822-4f35-89d9-58f82bcfab77" name="Contains"><con:configuration><token>&lt;Response>Record Added Suceessfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Verify_AddedEmployee_Exist_InDB" id="3420d6b0-7892-4d00-b327-6173322053d3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Find</con:operation><con:request name="Verify_AddedEmployee_Exist_InDB" id="a3ac5332-41b1-49c1-8548-5895ac3816fa"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Find soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Company>
+      </demo:Find>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="bb56cec5-9dbf-4fbb-a396-d8eba3d567ab"/><con:assertion type="Simple Contains" id="568f48fa-e9aa-4d94-b6a8-7b2772ff132b" name="Contains"><con:configuration><token>&lt;Response>Records fetched Successfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="DelayProperty_10Sec" id="6d8434de-a39b-4df4-bf80-83f2e9bbe781"><con:settings/><con:config><delay>10000</delay></con:config></con:testStep><con:testStep type="request" name="Delete_Employee_InDB" id="ba6d76e3-fd3b-418b-9b6d-784b36234cf7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Delete</con:operation><con:request name="Delete_Employee_InDB" id="24dcfaf5-b2f5-4fa0-b9c0-e1d9acbb1489"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="695577fb-4319-412a-aaef-e13999b46304"/><con:assertion type="Simple Contains" id="56e703f9-4c38-4e8d-891e-fcc48e571b27" name="Contains"><con:configuration><token>&lt;Response>Record Deleted Suceessfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Verify_DeleteEmployee_Exist_InDB" id="5bf93d0c-875a-400f-9676-97da24502337"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Delete</con:operation><con:request name="Verify_DeleteEmployee_Exist_InDB" id="e9553f1a-c406-4d09-aa4c-2790354449f1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester1</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="251b3fdb-2ba7-4336-8668-7b0d59ec5d2d"/><con:assertion type="Simple Contains" id="da89e8fc-c5a3-4036-addf-e7a5adc21e73" name="Contains"><con:configuration><token>&lt;FaultString>No records found&lt;/FaultString></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>6d8434de-a39b-4df4-bf80-83f2e9bbe781</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="f5dd64b9-810b-45b7-8ed3-07e6e2b2f16b" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase2_UsingJDBCRequestTest" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" name="Add_Employee_InDb" id="0eac420d-e187-4fbe-a479-f4c969242d9c"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Add</con:operation><con:request name="Add_Employee_InDb" id="49372705-44a3-4a0d-82c2-71b65831bcc1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester2</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester2</Company>
+         <Designation xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester2</Designation>
+         <Salary xsi:type="xsd:double" xs:type="type:double" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">200000</Salary>
+         <Experience xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">9</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="72bc3343-271d-4c6c-bbf6-93d4e1ed67ff"/><con:assertion type="Simple Contains" id="c9bdfff4-fad8-4431-a6ff-f687b2e236e7" name="Contains"><con:configuration><token>&lt;Response>Record Added Suceessfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="jdbc" name="JDBC Request" id="9c8f90c9-ab36-46bd-8130-b9c78fabaeb3"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>one</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password><con:query>Select *
+From employee where name=:EmployeeName;</con:query><con:assertion type="JDBC Status" id="9103fdb9-bc85-477f-b94a-9bd55cbe939d" name="JDBC Status"/><con:assertion type="JDBC Timeout" id="4f5214d9-8c51-4ece-9ade-353ea694fbed" name="JDBC Timeout"/><con:properties><con:property><con:name>EmployeeName</con:name><con:value>Tester2</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="Delete_AddedEmployee_FromDB" id="b767b058-014b-4751-b73e-1f982c242eae"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Delete</con:operation><con:request name="Delete_AddedEmployee_FromDB" id="4cd727a9-5440-4c1c-a891-955e09c05977"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Tester2</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="66cc000e-5ade-46ac-bb5d-4d873c1d54fe"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="0fbc9cd9-be6a-4f66-b1da-5ab476b05e4e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase3_UsingJDBCRequestTest_WithDataSourceExcel" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="datasource" name="DataSource_GetEmployeeDetailsFromExcel" id="3a7bd52b-c383-4ce7-a8c2-83ff36980bf6"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>/Users/appledev/Documents/workspace/SOAP UI/SOAPUI_Material_Notes/Training_Material/TestData/TestDataSource_Excel.xls</file><worksheet>Sheet5_JDBCRequest_EmployeeDetails</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty></con:configuration></con:dataSource><con:property>Name</con:property><con:property>Company</con:property><con:property>Designation</con:property><con:property>Salary</con:property><con:property>Experience</con:property><con:property>ExpectedResult</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="request" name="AddEmployee_InDB" id="30346e3e-fe92-4565-92cc-ba4e3add44a0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Add</con:operation><con:request name="AddEmployee_InDB" id="db954deb-dd02-4245-9822-164e73c982b2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Name}</Name>
+         <Company xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Company}</Company>
+         <Designation xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Designation}</Designation>
+         <Salary xsi:type="xsd:double" xs:type="type:double" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Salary}</Salary>
+         <Experience xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Experience}</Experience>
+      </demo:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c502ae91-16cf-487b-a8cf-749ea9646e5b"/><con:assertion type="Simple Contains" id="d118e82f-4ae8-4d90-8138-0ea73f1fb3d9" name="Contains"><con:configuration><token>&lt;Response>Record Added Suceessfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="jdbc" name="JDBCRequest1_Verification_ForAddedEmployees" id="1ae3987e-9a8f-4e34-832e-9a5307ea65a4"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>one</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password><con:query>select * from employee where name=:EmployeeName;</con:query><con:assertion type="JDBC Status" id="d2d4dc7b-32e2-442e-9627-d782826ba482" name="JDBC Status"/><con:assertion type="JDBC Timeout" id="a5ab3dbc-8418-4856-bc47-3b3fbddfcd6f" name="JDBC Timeout"/><con:assertion type="XPath Match" id="0f3deb40-f345-4467-a60a-9e257b21820f" name="XPathMatch1_EmployeeName"><con:configuration><path>//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.NAME[1]</path><content>${DataSource_GetEmployeeDetailsFromExcel#ExpectedResult#//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.NAME[1]}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="aa2a201a-df40-490d-99a6-7100ef1b5dec" name="XPathMatch2_CompanyName"><con:configuration><path>//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.COMPANY[1]</path><content>${DataSource_GetEmployeeDetailsFromExcel#ExpectedResult#//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.COMPANY[1]}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="196b0eaf-3319-4b9c-a0b3-9d5f97f6ffe3" name="XPathMatch3_Designation"><con:configuration><path>//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.DESIGNATION[1]</path><content>${DataSource_GetEmployeeDetailsFromExcel#Designation}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="350ba942-d363-4bd6-a7fe-04e0a7dadfb9" name="XPathMatch4_Salary"><con:configuration><path>//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.SALARY[1]</path><content>${DataSource_GetEmployeeDetailsFromExcel#ExpectedResult#//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.SALARY[1]}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="cf621614-c144-4f42-af8c-b67d28fff930" name="XpathMatch6_Experience"><con:configuration><path>//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.EXPERIENCE[1]</path><content>${DataSource_GetEmployeeDetailsFromExcel#ExpectedResult#//Results[1]/ResultSet[1]/Row[1]/EMPLOYEE.EXPERIENCE[1]}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties><con:property><con:name>EmployeeName</con:name><con:value>${DataSource_GetEmployeeDetailsFromExcel#Name}</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="delay" name="DelayProperty_8Sec" id="4eb7a000-d834-4681-9da0-3439122ef4c7"><con:settings/><con:config><delay>8000</delay></con:config></con:testStep><con:testStep type="request" name="DeleteEmployee_InDB" id="27b12bce-5bd4-46c2-b775-1c91be3cabba"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Employee Web ServiceBinding</con:interface><con:operation>Delete</con:operation><con:request name="DeleteEmployee_InDB" id="db954deb-dd02-4245-9822-164e73c982b2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/Project/soapService.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:demo="Demo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <demo:Delete soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <Name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">${DataSource_GetEmployeeDetailsFromExcel#Name}</Name>
+      </demo:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="c502ae91-16cf-487b-a8cf-749ea9646e5b"/><con:assertion type="Simple Contains" id="d118e82f-4ae8-4d90-8138-0ea73f1fb3d9" name="Contains"><con:configuration><token>&lt;Response>Record Deleted Suceessfully&lt;/Response></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="jdbc" name="JDBCRequest2_Verification_ForDeletedEmployee" id="1017b0f1-514f-462b-b361-f044d1e4f3f5"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>one</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password><con:query>select * from employee where name=:EmployeeName;</con:query><con:assertion type="JDBC Status" id="d2d4dc7b-32e2-442e-9627-d782826ba482" name="JDBC Status"/><con:assertion type="JDBC Timeout" id="a5ab3dbc-8418-4856-bc47-3b3fbddfcd6f" name="JDBC Timeout"/><con:assertion type="Simple Contains" id="5b3a0949-b0fe-46c2-823e-f463ae59a043" name="Contains"><con:configuration><token>&lt;ResultSet fetchSize="0"/></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties><con:property><con:name>EmployeeName</con:name><con:value>${DataSource_GetEmployeeDetailsFromExcel#Name}</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="6022eb6e-ebb3-4bb9-bca8-964a25d14ddf"><con:settings/><con:config><dataSourceStep>DataSource_GetEmployeeDetailsFromExcel</dataSourceStep><targetStep>AddEmployee_InDB</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>3a7bd52b-c383-4ce7-a8c2-83ff36980bf6</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>6022eb6e-ebb3-4bb9-bca8-964a25d14ddf</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>test</con:name><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password></con:databaseConnection><con:databaseConnection><con:name>test1</con:name><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password></con:databaseConnection><con:databaseConnection><con:name>one</con:name><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/soapuidb?user=UserChandra&amp;password=PASS_VALUE</con:connectionString><con:password>Password1</con:password></con:databaseConnection></con:databaseConnectionContainer><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>
